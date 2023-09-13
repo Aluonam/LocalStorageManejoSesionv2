@@ -1,8 +1,21 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const InputLocalStorage = () => {
+
+    const [userData, setUserData] = useState({})
+
+    const handleSaveData = () => {
+        localStorage.setItem("datos usuario", JSON.stringify(userData))
+        setUserData("")
+    }
+
+
   return (
-    <div>InputLocalStorage</div>
+    <>
+    <input type='text' onChange={(e)=>{setUserData({...userData, username: e.target.value})}}></input>
+
+    <button onClick={()=>{handleSaveData()}}>Iniciar sesión</button>
+    </>
   )
 }
 
