@@ -14,6 +14,10 @@ const InputLocalStorage = () => {
         setUserData(JSON.parse(datosLocal))
     }
 
+    const handleClose = () =>{
+        localStorage.removeItem("datos usuario")
+    }
+
 
   return (
     <>
@@ -22,6 +26,7 @@ const InputLocalStorage = () => {
 
     <button onClick={()=>{handleSaveData()}}>Iniciar sesión</button>
     <button onClick={()=>{handleRecoverData()}}>Recuperar sesión</button>
+    <button onClick={()=>{handleClose()}}>Cerrar sesión</button>
     </>
   )
 }
