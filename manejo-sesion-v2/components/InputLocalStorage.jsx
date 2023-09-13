@@ -13,6 +13,7 @@ const InputLocalStorage = () => {
   return (
     <>
     <input type='text' onChange={(e)=>{setUserData({...userData, username: e.target.value})}}></input>
+    <input type='password' onChange={(e)=>{setUserData({...userData, password: e.target.value})}}></input>
 
     <button onClick={()=>{handleSaveData()}}>Iniciar sesión</button>
     </>
